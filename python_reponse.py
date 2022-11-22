@@ -46,6 +46,7 @@ print(Tri_a_bulle(myTable))
     J'ai testé avec 1000 valeur, ça a mis 1 seconde voir 2. Après, plus on il y a de valeurs, plus on parcours le tableau pour permuter la boucle.
 """
 
+#---------------------------------------------------------------------------------------------------------------------------------------------------------#
 #Partie 2 : Tic tac toe
 
 #1
@@ -76,5 +77,29 @@ def placement_signe(tableau_jeu):
     tableau_jeu[emplt_ligne-1][emplt_colonne] = signe           #Ici on met le signe a l'emplacement choisi par le joueur
     return tableau_jeu
 
-print(placement_signe(tableau_jeu))
+#print(placement_signe(tableau_jeu))
+
+def verification(tableau_jeu,signe_tester):         #désolé, c'est très long
+    #lignes
+    if tableau_jeu[0][0]==signe_tester and tableau_jeu[0][1]==signe_tester and tableau_jeu[0][2]==signe_tester:
+        return True
+    if tableau_jeu[1][0]==signe_tester and tableau_jeu[1][1]==signe_tester and tableau_jeu[1][2]==signe_tester:
+        return True
+    if tableau_jeu[2][0]==signe_tester and tableau_jeu[2][1]==signe_tester and tableau_jeu[2][2]==signe_tester:
+        return True
+    
+    #colonnes
+    if tableau_jeu[0][0]==signe_tester and tableau_jeu[1][0]==signe_tester and tableau_jeu[2][0]==signe_tester:
+        return True
+    if tableau_jeu[0][1]==signe_tester and tableau_jeu[1][1]==signe_tester and tableau_jeu[2][1]==signe_tester:
+        return True
+    if tableau_jeu[0][2]==signe_tester and tableau_jeu[1][2]==signe_tester and tableau_jeu[2][2]==signe_tester:
+        return True
+    
+    #diagonales
+    if tableau_jeu[0][0]==signe_tester and tableau_jeu[1][1]==signe_tester and tableau_jeu[2][2]==signe_tester:
+        return True
+    if tableau_jeu[2][0]==signe_tester and tableau_jeu[1][1]==signe_tester and tableau_jeu[0][2]==signe_tester:
+        return True
+    return False
 

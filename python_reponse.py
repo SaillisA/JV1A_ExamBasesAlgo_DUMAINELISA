@@ -54,6 +54,7 @@ tableau_jeu=[   [None,None,None],
                 [None,None,None]    ]
 
 #2
+
 signe=str(input("Vous jouez les X ou les O ?"))                 #on regarde quelle signe joue le joueur
 
 print("Où voulez vous jouer ?")                                 #on veut savoir où il va jouer et on stock ses réponses
@@ -64,3 +65,14 @@ print('3',tableau_jeu[2])
 emplt_colonne=str(input("Quelle colonne ? A, B ou C ?"))
 emplt_ligne=int(input("Quelle ligne ? 1, 2 ou 3 ?"))
 
+#on remplace les lettre par des chiffres, plus faciles a manipuler
+if emplt_colonne == 'A':
+    emplt_colonne = 0
+if emplt_colonne == 'B':
+    emplt_colonne = 1
+if emplt_colonne == 'B':
+    emplt_colonne = 2
+
+tableau_jeu[emplt_ligne-1][emplt_colonne] = signe           #Ici on met le signe a l'emplacement choisi par le joueur
+
+print(tableau_jeu)

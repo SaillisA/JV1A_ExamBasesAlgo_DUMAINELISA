@@ -55,8 +55,7 @@ tableau_jeu=[   [None,None,None],
 
 #2
 signe=str(input("Vous jouez les X ou les O ?"))
-"""while signe != 'O' or signe != 'X':
-    signe=str(input("Le signe choisis n'est pas correct. Vous jouez les X ou les O ?"))"""      #j'ai essayé de prévoir l'erreur mais j'ai pas réussi
+
 print("Où voulez vous jouer ?")
 print(tableau_jeu[0])
 print(tableau_jeu[1])

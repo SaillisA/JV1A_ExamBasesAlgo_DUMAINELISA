@@ -56,7 +56,7 @@ tableau_jeu=[   [None,None,None],
 
 #2
 def placement_signe(tableau_jeu):
-    signe=str(input("Vous jouez les X ou les O ?"))                 #on regarde quelle signe joue le joueur
+    signe=str(input("Vous jouez les X ou les O ?"))                 #on regarde quel signe joue le joueur
 
     print("Où voulez vous jouer ?")                                 #on veut savoir où il va jouer et on stock ses réponses
     print('    A      B    C')  
@@ -71,9 +71,9 @@ def placement_signe(tableau_jeu):
         emplt_colonne = 0
     if emplt_colonne == 'B':
         emplt_colonne = 1
-    if emplt_colonne == 'B':
+    if emplt_colonne == 'C':
         emplt_colonne = 2
-
+    
     tableau_jeu[emplt_ligne-1][emplt_colonne] = signe           #Ici on met le signe a l'emplacement choisi par le joueur
     return tableau_jeu
 
@@ -110,3 +110,17 @@ def tableau_rempli(tableau_jeu):            #renvoie True si le tableau est plei
             if tableau_jeu[i][j] == None:
                 return False
     return True
+
+def Tic_tac_toe():
+    while tableau_rempli(tableau_jeu) == False :
+        placement_signe(tableau_jeu)
+        if verification(tableau_jeu,'X') == True:
+            print("Le joueur aux X a gagné :")
+            break
+        if verification(tableau_jeu,'O') == True:
+            print("Le joueur aux O a gagné !")
+            break
+    if tableau_rempli(tableau_jeu) == True :
+        print("Personne n'a gagné ; Egalité ! ")
+
+print(Tic_tac_toe())

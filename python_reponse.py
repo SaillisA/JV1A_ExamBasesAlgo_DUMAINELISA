@@ -54,10 +54,13 @@ tableau_jeu=[   [None,None,None],
                 [None,None,None]    ]
 
 #2
-signe=str(input("Vous jouez les X ou les O ?"))
+signe=str(input("Vous jouez les X ou les O ?"))                 #on regarde quelle signe joue le joueur
 
-print("Où voulez vous jouer ?")
-print(tableau_jeu[0])
-print(tableau_jeu[1])
-print(tableau_jeu[2])
-#emplacement=int(input
+print("Où voulez vous jouer ?")                                 #on veut savoir où il va jouer et on stock ses réponses
+print('    A      B    C')  
+print('1',tableau_jeu[0])
+print('2',tableau_jeu[1])
+print('3',tableau_jeu[2])
+emplt_colonne=str(input("Quelle colonne ? A, B ou C ?"))
+emplt_ligne=int(input("Quelle ligne ? 1, 2 ou 3 ?"))
+

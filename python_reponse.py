@@ -136,4 +136,4 @@ print(Tic_tac_toe())
     alignées. Et surtout, il faudra surtout rendre le programme optimisé (pas comme le miens).
     Le Puissance 4 et le Tic tac toe se ressemblent beaucoup, la seule différence étant le nombre de symboles ou couleurs à
     alligner et la taille du plateau de jeu.
-"""
+""" 

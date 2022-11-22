@@ -73,13 +73,13 @@ def placement_signe(tableau_jeu):
         emplt_colonne = 1
     if emplt_colonne == 'C':
         emplt_colonne = 2
-    tableau_jeu[emplt_ligne-1][emplt_colonne] = signe           #Ici on met le signe a l'emplacement choisi par le joueur
-    return tableau_jeu
-
-
+    tableau_jeu[emplt_ligne-1][emplt_colonne] = signe           #Ici on met le signe a l'emplacement choisi par le joueur. Cependant, rien n'empeche le joueur de mettre son signe sur une case où un signe est déjà présent
+    return tableau_jeu                                          #il faudrait juste mettre une condition ou un while qui renverrait un message d'erreur au joueur lui demandant de changer d'emplacement.
+                                                                #J'ai essayé de le faire sur une partie du Tic tac toe : si le joueur mettait une lettre autre que A B ou C, ça mettait un message d'erreur et tout mais
+                                                                #ça n'a pas fonctionné et je me suis retrouvé avec ce même message dans ma console (a chaque fois que je lançais le programme) alors que j'avais supprimé le script :c
 
 #3
-def verification(tableau_jeu,signe_tester):         #désolé, c'est très long
+def verification(tableau_jeu,signe_tester):         #désolé, c'est très long. J'ai tenté de le raccourcir avec des boucles et tout mais j'ai pas réussi :c
     #lignes
     if tableau_jeu[0][0]==signe_tester and tableau_jeu[0][1]==signe_tester and tableau_jeu[0][2]==signe_tester:
         return True
@@ -116,7 +116,7 @@ def tableau_rempli(tableau_jeu):            #renvoie True si le tableau est plei
 
 
 def Tic_tac_toe():
-    while tableau_rempli(tableau_jeu) == False :        #condition d'arret pour le jeu, si tous les emplacements sont remplies
+    while tableau_rempli(tableau_jeu) == False :        #condition d'arret pour le jeu, si tous les emplacements sont remplis
         placement_signe(tableau_jeu)
 
         if verification(tableau_jeu,'X') == True:
@@ -129,7 +129,7 @@ def Tic_tac_toe():
     if tableau_rempli(tableau_jeu) == True :
         print("Personne n'a gagné ; Egalité ! ")
 
-print(Tic_tac_toe())
+print(Tic_tac_toe())                                #initialisation du jeu :)
 
 #6
 """ Pour le Puissance 4, il faudra déjà, agrandir le tableau de jeu, rajouter des tests de vérifications si 4 couleurs sont

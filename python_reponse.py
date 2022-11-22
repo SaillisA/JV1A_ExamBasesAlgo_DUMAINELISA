@@ -77,8 +77,8 @@ def placement_signe(tableau_jeu):
     tableau_jeu[emplt_ligne-1][emplt_colonne] = signe           #Ici on met le signe a l'emplacement choisi par le joueur
     return tableau_jeu
 
-#print(placement_signe(tableau_jeu))
 
+#3
 def verification(tableau_jeu,signe_tester):         #désolé, c'est très long
     #lignes
     if tableau_jeu[0][0]==signe_tester and tableau_jeu[0][1]==signe_tester and tableau_jeu[0][2]==signe_tester:
@@ -103,3 +103,10 @@ def verification(tableau_jeu,signe_tester):         #désolé, c'est très long
         return True
     return False
 
+#4
+def tableau_rempli(tableau_jeu):            #renvoie True si le tableau est pleins
+    for i in range(0,3):
+        for j in range(0,3):
+            if tableau_jeu[i][j] == None:
+                return False
+    return True

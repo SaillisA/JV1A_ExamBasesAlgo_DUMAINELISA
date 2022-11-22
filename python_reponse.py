@@ -1,6 +1,6 @@
 ##Partie 1 : Tri à bulles
 #1
-myTable=[12,58,3,5,7,4]
+myTable=[12,58,3,5,7,4,54,8,21,6,64,4,5,2,3]
 
 
 def permuter(tab,indice1,indice2):
@@ -18,3 +18,11 @@ for i in range (len(myTable)-1):        #on fait une boucle de la taille du tabl
 
 """print(myTable)"""
 
+def Tri_a_bulle(tab):
+    for y in range(3):
+        for i in range (len(myTable)-1):
+            if myTable[i]>myTable[i+1]:
+                permuter(myTable,i,i+1)
+    return myTable
+
+print(Tri_a_bulle(myTable))

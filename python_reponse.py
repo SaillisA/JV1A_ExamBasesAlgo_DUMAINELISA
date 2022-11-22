@@ -73,9 +73,9 @@ def placement_signe(tableau_jeu):
         emplt_colonne = 1
     if emplt_colonne == 'C':
         emplt_colonne = 2
-    
     tableau_jeu[emplt_ligne-1][emplt_colonne] = signe           #Ici on met le signe a l'emplacement choisi par le joueur
     return tableau_jeu
+
 
 
 #3
@@ -103,6 +103,8 @@ def verification(tableau_jeu,signe_tester):         #désolé, c'est très long
         return True
     return False
 
+
+
 #4
 def tableau_rempli(tableau_jeu):            #renvoie True si le tableau est pleins
     for i in range(0,3):
@@ -111,16 +113,27 @@ def tableau_rempli(tableau_jeu):            #renvoie True si le tableau est plei
                 return False
     return True
 
+
+
 def Tic_tac_toe():
-    while tableau_rempli(tableau_jeu) == False :
+    while tableau_rempli(tableau_jeu) == False :        #condition d'arret pour le jeu, si tous les emplacements sont remplies
         placement_signe(tableau_jeu)
+
         if verification(tableau_jeu,'X') == True:
             print("Le joueur aux X a gagné :")
             break
         if verification(tableau_jeu,'O') == True:
             print("Le joueur aux O a gagné !")
             break
+
     if tableau_rempli(tableau_jeu) == True :
         print("Personne n'a gagné ; Egalité ! ")
 
 print(Tic_tac_toe())
+
+#6
+""" Pour le Puissance 4, il faudra déjà, agrandir le tableau de jeu, rajouter des tests de vérifications si 4 couleurs sont
+    alignées. Et surtout, il faudra surtout rendre le programme optimisé (pas comme le miens).
+    Le Puissance 4 et le Tic tac toe se ressemblent beaucoup, la seule différence étant le nombre de symboles ou couleurs à
+    alligner et la taille du plateau de jeu.
+"""
